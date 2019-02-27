@@ -1,5 +1,5 @@
 <?php
-///WORKING GIT
+///WORKING GIT TESTING sublime
 /**
  * ronin functions and definitions.
  *
@@ -14,7 +14,7 @@ if ( ! function_exists( 'ronin_setup' ) ) :
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
+ * as indicating support for post thumbnails.π
  */
 function ronin_setup() {
 	/*
