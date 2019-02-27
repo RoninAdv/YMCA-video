@@ -1,0 +1,12 @@
+ <div class="hero-wrapper">
+	<img src="{{ TimberImage(layouts.section_image).src }}"  {% if layouts.mobile_image %} class="for-large" {% endif %} alt="{{ TimberImage(layouts.section_image).alt }}"/>
+		<div class="hero-content">
+			<div class="hero-content-wrap">
+				<h2>{{ layouts.title }}</h2>
+				<a href="{{ layouts.page_link }}" class="white-btn">{{ layouts.link_text }}</a>
+			</div>
+		</div>
+</div>
+
+
+

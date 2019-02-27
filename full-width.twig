@@ -1,0 +1,37 @@
+<div class="full-width-block {{ block_section.background_color }}">
+	<div class="wrap">
+
+	
+
+	<!-- content block -->
+
+	{% if block_section.content_layout == "one-column" %} 	
+		{{ block_section.one_column }}
+	{% else %}
+		 <div class="left-content">
+		 	{{ block_section.column_one }}
+		 </div><!-- left-content -->
+		 <div class-"right-content">
+		 	{{ block_section.column_two }}
+		 </div><!-- right-content -->
+	{% endif %}
+	
+	{% if block_section.social_media[0] == "on" %} 	
+		
+		
+		<a href=""></a> <!-- Youtube -->
+		<a href=""></a> <!-- Facebook -->
+		<a href=""></a> <!-- Twitter -->
+		<a href=""></a> <!-- Instagram -->
+		<a href=""></a> <!-- Linkedin -->
+		<a href=""></a> <!-- Email -->
+
+	{% else %}
+		 
+	{% endif %}
+
+
+	
+
+	</div><!-- wrap -->
+</div><!-- full-width-block -->

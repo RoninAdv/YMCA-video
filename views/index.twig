@@ -1,0 +1,18 @@
+
+<div class="hero-wrap">
+	<img src="{{TimberImage(post.get_field('hero_image')).src}}" />
+</div><!-- hero-wrap -->
+
+{{ post.content }}
+
+{% for layouts in post.get_field('page_layouts') %}
+    {% if layouts.acf_fc_layout == 'content_block' %}
+       
+		{% include 'content-block.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'officers' %}
+       
+      {% include 'officers.twig' %}
+
+    {% endif %}
+{% endfor %}

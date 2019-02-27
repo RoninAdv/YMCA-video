@@ -1,0 +1,20 @@
+<div class="accordion-wrap">
+ 
+    <div class="wrap">
+      <h2>{{ layouts.accordion_title }}</h2>
+    </div><!-- wrap -->
+    <div id="accordion">
+      {% for accordion_blocks in layouts.accordion %}
+         
+        <h3 class="accordion-toggle"><div class="wrap"><span class="arrow arrowDown"></span> <span class="text-wrap">{{ accordion_blocks.section_title }}</span></div></h3>
+        <div class="accordion-content wrap">
+            
+          {{ accordion_blocks.section_content }}
+            
+        </div><!-- accordion-content -->
+      {% endfor %}
+    </div> <!-- accordion End -->
+
+</div><!-- accordion-wrap -->
+
+

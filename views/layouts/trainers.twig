@@ -1,0 +1,17 @@
+<div class="trainer-wrapper" id="trainers">
+
+    <div class="trainers">
+      {% for trainers in layouts.trainer %}
+        <div class="trainer" style="background:url({{ TimberImage(trainers.trainer_photo).src }}) center center; background-size:cover;">
+          <div class="trainer-content">
+            <img src="{{ TimberImage(trainers.icon).src }}">
+            <h3>{{ trainers.trainer_field }}</h3>
+            <a href="{{ trainers.trainer_link }}" class="white-btn">{{ trainers.trainer_name }}</a> 
+          </div> <!-- trainer-content -->
+        </div>
+      {% endfor %}
+    </div> <!-- trainers End -->
+
+</div><!-- trainers-wrap -->
+
+

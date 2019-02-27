@@ -1,0 +1,591 @@
+.calendar-wrap{
+    background:black;
+    color:white;
+    padding:100px 0;
+    background:url(../img/global/black-back-fade.jpg) center center fixed;
+    background-size:cover;
+ 
+    .calendar-block{
+      width:100%;
+      @include breakpoint($medium) {
+        width:50%;
+      }
+    }
+    .calendar-info{
+      position:relative;
+      @include breakpoint($medium) {
+        // overflow-y:scroll;
+        // height:560px;
+      }
+    }
+}
+
+.inner-cal{
+     display:flex;
+    flex-wrap:wrap;
+    position:relative;
+    @include breakpoint($medium) {
+      flex-wrap:nowrap;
+    }
+}
+
+//calendar-content styles
+.single-class{
+    position:relative;
+    top:0px;
+    left:0px;
+    background:transparent;
+    transition: opacity 1s ease-out;
+    display:none;
+    width:100%;
+    margin-bottom:20px;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    background:#555555;
+    .class-wrap{
+        padding:20px;
+        @include breakpoint($medium) {
+          padding:50px 20px 50px 50px;
+        }
+    }
+    &:hover {
+      display:block;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+.display{
+  display:block;
+ 
+}.time-slot-wrap{
+  display:flex;
+}
+.class-date{
+  display:flex;
+}
+.time-slots{
+  margin-left:2px;
+}
+
+.class-info{
+    @include breakpoint($medium) {
+      display:flex;
+      justify-content:space-between;
+    }
+    h2{
+        font-size:24px;
+        color:white;
+        margin-bottom:0px;
+        padding-bottom:0px;
+        text-transform:uppercase;
+    }
+    h3{
+        font-size:20px;
+        margin-bottom:10px;
+    }
+    p{
+        color:white;
+        line-height:110%;
+    }
+    h6{
+      margin-bottom:0px;
+    }
+    .class-day{
+        font-family:$headings-1;
+        font-size:60px;
+        letter-spacing: -1px;
+        letter-spacing:-4px;
+        line-height:67%;
+        @include breakpoint($medium) {
+          font-size:102px;
+           letter-spacing:-12px;
+        }
+    }
+    .class-month{
+        text-transform:uppercase;
+        font-family:$headings-1;
+        font-size:34px;
+        @include breakpoint($medium) {
+           font-size:50px;
+        }
+
+    }
+    .left-class-content{
+      margin-bottom:20px;
+      @include breakpoint($medium) {
+        width:20%;
+        margin-bottom:0px;
+      }
+    }
+    .right-class-content{
+      @include clearfix;
+      @include breakpoint($medium) {
+        width:75%;
+       
+      }
+    }
+}
+
+
+//calendar display
+
+#calendar {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top:50px;
+    text-align:center;
+}
+
+.calendar-display{
+  position:relative;
+  margin:0 auto;
+}
+
+.calendar-wrapper{
+    margin:0 auto;
+    max-width:377px;
+    width:100%;
+    height:auto;
+    transition: $transition;
+    @include breakpoint($medium) {
+
+    }
+    h5{
+        font-family:$headings-1;
+        font-size:35px;
+    }
+    .fixed-calendar{
+      position:relative;
+	  top:0%;
+	  transform:translateY(0%);
+	 
+	  @include breakpoint($medium) {
+      // 	 position:absolute;
+	  	  // top:50%;
+	     // transform:translateY(-50%);
+  	  }
+    }
+}
+
+.header {
+  text-align: center;
+  position:relative;
+  z-index: 100;
+  width:267px;
+  margin:0 auto;
+  margin-bottom:10px;
+  @include breakpoint($medium) {
+      margin-left:0px;
+      margin-bottom:20px;
+  }
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color:white;
+  text-align:left;
+  font-family:$headings-1;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.left, .right {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  cursor: pointer;
+  font-weight:normal;
+  color:#4c4c4e;
+  margin-top:-3px;
+  transition:$transition;
+  &:hover{
+    color:$tertiary-color;
+  }
+}
+
+.left {
+  top:0px;
+  left:120px;
+  &:after {
+    content: "<";
+    display:block;
+  }
+}
+
+.right {
+  top:0px;
+  left:150px;
+  &:after {
+    content: ">";
+    display:block;
+  }
+}
+
+.month {
+  /*overflow: hidden;*/
+  opacity: 0;
+}
+
+.month.new {
+  -webkit-animation: fadeIn 1s ease-out;
+  opacity: 1;
+}
+
+.month.in.next {
+  -webkit-animation: moveFromTopFadeMonth .4s ease-out;
+  -moz-animation: moveFromTopFadeMonth .4s ease-out;
+  animation: moveFromTopFadeMonth .4s ease-out;
+  opacity: 1;
+}
+
+.month.out.next {
+  -webkit-animation: moveToTopFadeMonth .4s ease-in;
+  -moz-animation: moveToTopFadeMonth .4s ease-in;
+  animation: moveToTopFadeMonth .4s ease-in;
+  opacity: 1;
+}
+
+.month.in.prev {
+  -webkit-animation: moveFromBottomFadeMonth .4s ease-out;
+  -moz-animation: moveFromBottomFadeMonth .4s ease-out;
+  animation: moveFromBottomFadeMonth .4s ease-out;
+  opacity: 1;
+}
+
+.month.out.prev {
+  -webkit-animation: moveToBottomFadeMonth .4s ease-in;
+  -moz-animation: moveToBottomFadeMonth .4s ease-in;
+  animation: moveToBottomFadeMonth .4s ease-in;
+  opacity: 1;
+}
+
+.week {
+  .day:first-of-type{
+    margin-left:0px;
+  }
+}
+
+.view-all-btn{
+  color:#75B1C5;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family: $headings-1;
+  margin-top:10px;
+  font-size:13px;
+  margin-left:5px;
+}
+
+.day {
+  display: inline-block;
+  width:31px;
+  height:31px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  background: #555555;
+  position: relative;
+  z-index: 100;
+  margin-left:15px;
+  margin-bottom:15px;
+  overflow:hidden;
+  @include breakpoint($medium) {
+     width:41px;
+    height:41px;
+  }
+}
+
+.day.other {
+ background: transparent;
+}
+
+.day.today {
+  // color: rgba(156, 202, 235, 1);
+  // background: #699aad;
+  // .day-number {
+  //   display:block;
+  //   color:white;
+  // }
+}
+
+.day-name {
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, .5);
+  letter-spacing: .7px;
+  display:none;
+}
+
+.day-number {
+  font-size: 9px;
+  position:absolute;
+  color:white;
+  top:5px;
+  right:3px;
+  display:none;
+}
+
+.other{
+  .day-number{
+    color:#000;
+  }
+}
+
+.day .day-events {
+  list-style: none;
+  text-align: center;
+  line-height: 6px;
+  overflow: hidden;
+}
+
+.day .day-events a {
+  vertical-align: top;
+  display: block;
+  padding: 0;
+  margin: 0;
+  width:100%;
+  height: 41px;
+  line-height: 5px;
+  margin: 0 1px;
+}
+
+.blue { background: rgba(156, 202, 235, 1); }
+.orange { background: #b7b7b7;
+  font-size: 9px;
+  text-align:right;
+  color:black !important;
+  padding:5px 5px !important;
+  text-decoration:none;
+  font-family: $headings-1;
+  &:hover{
+    transition:$transition;
+    background: #fefff9;
+  }
+}
+.green { background: rgba(153, 198, 109, 1); }
+.yellow { background: rgba(249, 233, 0, 1); }
+
+.details {
+  position: relative;
+  width: 420px;
+  height: 75px;
+  background: rgba(164, 164, 164, 1);
+  margin-top: 5px;
+  border-radius: 4px;
+  display:none;
+}
+
+.details.in {
+  -webkit-animation: moveFromTopFade .5s ease both;
+  -moz-animation: moveFromTopFade .5s ease both;
+  animation: moveFromTopFade .5s ease both;
+}
+
+.details.out {
+  -webkit-animation: moveToTopFade .5s ease both;
+  -moz-animation: moveToTopFade .5s ease both;
+  animation: moveToTopFade .5s ease both;
+}
+
+.arrow {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -2px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent rgba(164, 164, 164, 1) transparent;
+  transition: all 0.7s ease;
+}
+
+.events {
+  height: 75px;
+  padding: 7px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.events.in {
+  -webkit-animation: fadeIn .3s ease both;
+  -moz-animation: fadeIn .3s ease both;
+  animation: fadeIn .3s ease both;
+}
+
+.events.in {
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.details.out .events {
+  -webkit-animation: fadeOutShrink .4s ease both;
+  -moz-animation: fadeOutShink .4s ease both;
+  animation: fadeOutShink .4s ease both;
+}
+
+.events.out {
+  -webkit-animation: fadeOut .3s ease both;
+  -moz-animation: fadeOut .3s ease both;
+  animation: fadeOut .3s ease both;
+}
+
+.event {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .5px;
+  padding: 2px 16px;
+  vertical-align: top;
+}
+
+.event.empty {
+  color: #eee;
+}
+
+.event-category {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin: 6px 0 0;
+  vertical-align: top;
+}
+
+.event span {
+  display: inline-block;
+  padding: 0 0 0 7px;
+}
+
+.legend {
+  display:none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(60, 60, 60, 1);
+  line-height: 30px;
+
+}
+
+.entry {
+  position: relative;
+  padding: 0 0 0 25px;
+  font-size: 13px;
+  display: inline-block;
+  line-height: 30px;
+  background: transparent;
+}
+
+.entry:after {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 5px;
+  top: 12px;
+  left: 14px;
+}
+
+.entry.blue:after { background: rgba(156, 202, 235, 1); }
+.entry.orange:after { background: rgba(247, 167, 0, 1); }
+.entry.green:after { background: rgba(153, 198, 109, 1); }
+.entry.yellow:after { background: rgba(249, 233, 0, 1); }
+
+/* Animations are cool!  */
+@-webkit-keyframes moveFromTopFade {
+  from { opacity: .3; height:0px; margin-top:0px; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToTopFade {
+  to { opacity: .3; height:0px; margin-top:0px; opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTopFade {
+  to { height:0px; -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTopFade {
+  to { height:0px; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
+}
+@-moz-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
+}
+@keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
+}
+
+@-webkit-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
+}
+@-moz-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
+}
+@keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
+}
+
+@-webkit-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
+}
+@-moz-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
+}
+@keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
+}
+
+@-webkit-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
+}
+@-moz-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
+}
+@keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
+}
+
+@-webkit-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@-moz-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@keyframes fadeIn  {
+  from { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@-moz-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@keyframes fadeOut  {
+  to { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}
+@-moz-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}
+@keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
+}

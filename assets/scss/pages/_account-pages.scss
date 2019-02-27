@@ -1,0 +1,50 @@
+.login-pages{
+	background-size:cover;
+	min-height:100vh;
+	.login-content-wrap{
+		min-height:100vh;
+		color:white !important;
+		display:flex;
+		align-items:center;
+	}
+	.create{
+		border-bottom:none !important;
+		
+		h2{
+			color:white;
+			font-size:32px !important;
+			text-transform:uppercase;
+			text-align:center;
+		}
+	}
+	p{
+		color:white;
+	}	
+	#gform_submit_button_1{
+		font-weight:bold;
+		    padding: 10px 50px;
+		font-size:16px;
+	}
+	.gform_footer{
+		text-align:center;
+		margin-top:20px;
+	}
+	li.gfield.gfield_error{
+			border:none !important;
+			background:transparent !important;
+		}
+	.validation_error{
+		display:none !important;
+	}
+}
+.logout{
+	color:white;
+	display:block;
+	text-align:center;
+	margin-top:20px;
+}
+
+
+.swpm-profile-firstname-row,.swpm-profile-lastname-row,.swpm-profile-phone-row,.swpm-profile-street-row,.swpm-profile-city-row,.swpm-profile-state-row,.swpm-profile-zipcode-row,.swpm-profile-country-row,.swpm-profile-company-row,.swpm-profile-membership-level-row{
+	display:none !important;
+}

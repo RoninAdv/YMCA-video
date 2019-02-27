@@ -1,0 +1,55 @@
+<div class="content-block {{layouts.background_color}} {{layouts.padding}}" id="{{layouts.anchor_link}}">
+	<div class="wrap">
+			<!-- one column layout -->
+			{% if layouts.content_heading %}
+				<div class="heading-wrapper">
+					<h2> {{ layouts.content_heading }} </h2>
+				</div>
+			{% endif %}
+
+		    {% if layouts.columns == 'one-column' %}
+       			<div class="one-column">	
+       				{{ layouts.column_one }}
+       			</div> <!-- one-column -->
+			<!-- two column layout -->
+		    {% elseif layouts.columns == 'two-column' %}
+				<div class="two-columns">
+					<div class="column">	
+	       				{{ layouts.column_one }}
+	       			</div> <!-- column-one -->
+	       			<div class="column">	
+	       				{{ layouts.column_two }}
+	       			</div> <!-- column-two -->
+       			</div> <!-- two-columns -->
+			<!-- three column layout -->
+		    {% elseif layouts.columns == 'three-column' %}
+				<div class="three-columns">
+					<div class="column">	
+	       				{{ layouts.column_one }}
+	       			</div> <!-- column-one -->
+	       			<div class="column">	
+	       				{{ layouts.column_two }}
+	       			</div> <!-- column-two -->
+	       			<div class="column">	
+	       				{{ layouts.column_three }}
+	       			</div> <!-- column-three -->
+				</div> <!-- three-columns -->
+			<!-- four column layout -->
+		    {% elseif layouts.columns == 'four-column' %}  
+		       	<div class="four-columns">
+					<div class="column">	
+	       				{{ layouts.column_one }}
+	       			</div> <!-- column-one -->
+	       			<div class="column">	
+	       				{{ layouts.column_two }}
+	       			</div> <!-- column-two -->
+	       			<div class="column">	
+	       				{{ layouts.column_three }}
+	       			</div> <!-- column-three -->
+	       			<div class="column">	
+	       				{{ layouts.column_four }}
+	       			</div> <!-- column-four -->
+	       		</div><!-- four-columns -->
+		    {% endif %}
+	</div><!-- wrap -->
+</div><!-- content-block -->

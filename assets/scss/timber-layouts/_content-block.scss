@@ -1,0 +1,93 @@
+.content-block{
+	padding:60px 0px;
+	position:relative;
+	z-index:99;
+	.two-columns, .three-columns, .four-columns{
+		@include clearfix;
+		.column{
+			@include breakpoint($medium) {
+				float:left;
+			}
+		}
+	}
+	.two-columns{
+		.column{
+			@include breakpoint($medium) {
+				width:50%;
+				padding-right:2.5%;
+				&:last-of-type{
+					padding-left:2.5%;
+					padding-right:0;
+				}
+			}
+		}
+	}
+	.three-columns{
+		.column{
+			@include breakpoint($medium) {
+				width:33.3333%;
+				padding-right:2.5%;
+				&:nth-child(2){
+					padding:0 1.25%;
+				}
+				&:last-of-type{
+					padding-left:2.5%;
+					padding-right:0;
+				}
+			}
+		}
+	}
+	.four-columns{
+		.column{
+			@include breakpoint($medium) {
+				width:25%;
+				padding-right:2.5%;
+				&:nth-child(2), &:nth-child(3){
+					padding:0 1.25%;
+				}
+				&:last-of-type{
+					padding-left:2.5%;
+					padding-right:0;
+				}
+			}
+		}
+	}
+}
+
+.block-padding{
+	padding:60px 0px;
+}
+.padding-top{
+	padding:60px 0px 0px;
+}
+.padding-bottom{
+	padding:0px 0px 60px;
+}
+.no-padding{
+	padding:0px 0px 0px;
+}
+
+.no-padding-mobile{
+	padding:0px 0px 0px;
+	@include breakpoint($medium) {
+		padding:0px 0px 60px;
+	}
+	.wrap{
+		width:100%;
+		@include breakpoint($medium) {
+			width: auto;
+			padding:0px 20px;
+			max-width: 760px;
+		}
+		@include breakpoint($large) {
+			max-width: 940px;
+			padding:0px;
+		}
+		@include breakpoint($xl) {
+			max-width: 1200px;
+		}
+	}
+	p, img{
+		margin:0px !important;
+	}
+}

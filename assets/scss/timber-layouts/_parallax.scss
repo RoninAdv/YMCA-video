@@ -1,0 +1,46 @@
+.parallax-window{
+	min-height: 400px;
+    background: transparent;
+    video {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%; 
+		min-height: 100%;
+	}
+}
+
+.video-container{
+	height: 600px;
+	.video-parallax {
+	    -webkit-transition-position: fixed;
+	    position: fixed;
+	    z-index:-101;
+	}
+	video {
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    transform: translateX(-50%) translateY(-50%);
+	    background-size: cover;
+	    transition: 1s opacity;
+	}
+}
+
+.for-large{
+	display:none;
+	@include breakpoint($small) {
+		display:block;
+  	}
+}
+
+.for-mobile{
+	display:block;
+	@include breakpoint($small) {
+		display:none;
+  	}
+}

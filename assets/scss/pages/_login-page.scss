@@ -1,0 +1,228 @@
+.page-id-87{
+	.site-header, .site-footer{
+	 	display:none;
+	}
+}
+
+
+.page-id-87, .page-id-199, .page-id-201, .page-id-202, .page-id-495{
+	background:url(../img/global/black-back-fade.jpg) center center no-repeat;
+	background-size:cover;
+	min-height:100vh;
+	
+	.widget-title{
+		display:none;
+	}
+	.login-logo{
+	
+		text-align:center;
+		img{
+			margin:0 auto;
+			display:block;
+		}
+	}
+	.gform_login_widget{
+		max-width:400px !important;
+		width:400px !important;
+	}
+	.login-wrap{
+		position:relative;
+		z-index:999;
+		padding:200px 0 200px;
+	}
+	h1{
+		color:white;
+		margin-top:30px;
+	}
+	.login-logo{
+		img{
+			display:block;
+			max-width:100%;
+			height:auto;
+			margin:0 auto;
+
+		}
+	}
+
+		/* Change Autocomplete styles in Chrome*/
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:focus
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+	    border: 0px !important;
+	  -webkit-text-fill-color: white;
+	  -webkit-box-shadow: 0 0 0px 1000px rgba(112,112,112, 0.33) inset;
+	  transition: background-color 5000s ease-in-out 0s;
+	}
+
+
+	.gform_footer{
+		margin:0px !important;
+		padding:0px !important; 
+	}
+	.gform_login_widget{
+		color:white;
+		font-family:$headings-1;
+		margin:0 auto;
+		display:block;
+		max-width:295px;
+	}
+	.gform_button.gform_button{
+		display: inline-block;
+		border: none;
+		margin: 0;
+		text-decoration: none;
+
+		font-size: 1rem;
+		cursor: pointer;
+		text-align: center;
+		transition: background 250ms ease-in-out, 
+		transform 150ms ease;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background:white;
+		color:black;
+		border-radius:0px;
+		padding:15px 50px;
+		display:block;
+	}
+	.gf_login_links{
+		a{
+			color:white;
+		}
+	}
+	.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label{
+		margin-top:12px !important;
+	}
+	.gform_body.gform_body, .swpm-validate-form, #swpm-pw-reset-form, #lostpasswordform{
+			
+		position:relative;
+		border-radius:10px;
+		padding:0px;
+		h3{
+			// font-family:$headings-book;
+			font-size:40px;
+			border-bottom:solid 1px #1687cb;
+			color:#1687cb;
+		}
+		label, input{
+			color:white;
+			font-size:20px;
+			font-family:$headings-1;
+		}
+		input{
+			font-size:18px;
+		}
+		.large, #input_3_6, #input_3_6_2, .swpm-text-field, select, tr input, .large, #input_1_4, #input_1_4_2, #somfrp_user_info{
+			background: transparent;
+			border-top: transparent !important;
+			border-left: transparent !important;
+			border-right: transparent !important;
+			border-bottom: 0px solid !important;
+			font-weight: 200;
+			color:#a2a2a2;
+			padding-left: 10px;
+			box-shadow:0 0 8px #666;
+		}
+		#input_1, #input_2, .swpm-text-field, select,  tr input, .large, #input_1_4, #input_1_4_2, #somfrp_user_info{
+			background:rgba(112,112,112, 0.33)  !important;
+			border:0px !important;
+			color:white;
+			font-size:16px;
+			font-family: 'cachetbookregular';
+			padding:15px 15px !important;
+			border-radius:10px;
+			width:100% !important;
+		}
+		#label_3_1{
+			position:relative;
+			top:3px;
+		}
+		#gform_submit_button_0{
+			text-transform:uppercase;
+			font-weight:bold;
+		}
+		li.gfield.gfield_error{
+			border:none !important;
+			background:transparent !important;
+		}
+		select{
+			height:60px;
+		}
+		
+		.gform_button, .swpm-edit-profile-submit.swpm-edit-profile-submit, .swpm-pw-reset-submit.swpm-pw-reset-submit, #reset-pass-submit{
+			background:white;
+			border-color:white;
+			text-shadow: none;
+			color:black;
+			transition:$transition;
+			border:0;
+			box-shadow:none;
+			border-radius:0;
+			font-size:16px;
+			display:block;
+			padding:10px 50px;
+			height:auto;
+			float:none;
+			margin:0 auto;
+			text-transform:uppercase;
+			font-weight:bold;
+			border:solid transparent 1px;
+			&:hover, &:active, &:visited{
+				background:#989896;
+				transform:scale(1.1);
+			}
+		}
+	}
+}
+.som-password-error-message, .som-password-sent-message{
+			background:rgba(150,150,150,0.3) !important;
+		}
+
+.gf_login_links{
+	margin-top:60px;
+	text-align:center;
+	a{
+		display:inline-block;
+	
+		line-height:100%;
+		margin-bottom:20px;
+	}
+	a:first-of-type{
+		color:#9f9f9f;
+	}
+	a:last-of-type{
+		padding:20px;
+		text-decoration:none;
+		transition:$transition;
+		&:hover{
+			
+		}
+	}
+}
+
+.login-content{
+	margin:0 auto;
+}
+
+.page-id-199 .gform_footer{
+	margin-top:20px !important;
+}
+
+.swpm-validate-form{
+	table{
+		border-collapse:separate; 
+		border-spacing: 0 1em;
+		td{
+			font-family: 'cachetbookregular';
+			padding:10px;
+		}
+	}
+}
+
+

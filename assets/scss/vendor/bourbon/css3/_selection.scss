@@ -1,0 +1,22 @@
+// Fix found on Github: 
+// https://github.com/thoughtbot/bourbon/blob/977267fff6d1d958a1473e2cf756f9c0c88b45da/app/assets/stylesheets/css3/_selection.scss
+
+@mixin selection($current-selector: false) {
+  @if $current-selector {
+    &::selection {
+      @content;
+    }
+
+    &::-moz-selection {
+      @content;
+    }
+  } @else {
+    ::selection {
+      @content;
+    }
+
+    ::-moz-selection {
+      @content;
+    }
+  }
+}

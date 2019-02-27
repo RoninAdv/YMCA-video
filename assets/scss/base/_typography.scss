@@ -1,0 +1,147 @@
+//
+//	All type styles for the size should be here
+//-------------------------------------------------------
+@font-face {
+    font-family: 'cachetbookregular';
+    src: url('../fonts/cachetbook-webfont.woff') format('woff'),
+         url('../fonts/cachetbook-webfont.ttf') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cachetbold';
+    src: url('../fonts/cachet-bold-webfont.woff') format('woff'),
+          url('../fonts/cachet-bold-webfont.ttf') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'cachetbold';
+//     src: url('../fonts/cachetbook-webfont.woff2') format('woff2'),
+//          url('../fonts/cachetbook-webfont.woff') format('woff'),
+//           url('../fonts/cachetbook-webfont.ttf') format('tff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
+
+$headings-1: 'cachetbookregular';
+$headings-1-bold: 'cachetbold';
+$headings-book: 'cachetbold';
+// Extends
+//___________________________________________________
+
+%font-light {
+	font-weight: 300;
+} 
+
+%font-semibold {
+	font-weight: 600; 
+}
+
+%font-bold {
+	font-weight: 700;
+}
+
+//
+// Base
+//___________________________________________________
+
+h1{
+	font-family: $headings-1-bold;
+	font-size:25px;
+	color:#555555;
+	margin-bottom:10px;
+	text-transform:uppercase;
+	@include breakpoint($medium) {
+		font-size:40px;
+	}
+}
+
+h2{
+	font-family: $headings-1;
+	font-size:20px;
+	padding-bottom:29px;
+	color:#555555;
+	@include breakpoint($medium) {
+		font-size:28px;
+	}
+}
+h3{
+	font-family: $headings-1-bold;
+	font-size:24px;
+	margin-bottom:20px;
+	color:white;
+	text-transform:uppercase;
+	@include breakpoint($medium) {
+		font-size:36px;
+	}
+}
+h5{
+	font-size:16px;
+	color:white;
+	@include breakpoint($medium) {
+		font-size:24px;
+	}
+}
+h6{
+	font-family: $headings-1;
+	color:white;
+	font-size:14px;
+	line-height:110%;
+	margin-bottom:20px;
+	@include breakpoint($medium) {
+		font-size:16px;
+	}
+}
+p{
+	font-family: $headings-1;
+	color:#404040;
+	font-size:14px;
+	margin-bottom:20px;
+	line-height:150%;
+	@include breakpoint($medium) {
+		font-size:16px;
+	}
+}
+.validation_message, input, .swpm-profile-update-success, .logout{
+	font-family: $headings-1 !important;
+}
+.hero-content{
+	p, h2{
+		color:white;
+	}
+	p{
+		margin-bottom:0px;
+	}
+}
+
+strong{
+	font-family:$headings-book;
+}
+
+
+.white-btn.white-btn{
+	font-family: $headings-1;
+	font-size:18px;
+	color:black;
+	background:white;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:8px 20px;
+	display:inline-block;
+	transition: $transition;
+	line-height:100%;
+	margin-bottom:15px;
+	&:hover{
+		opacity:0.6;
+	}
+	span{
+		font-size:12px;
+	}
+}
+
+

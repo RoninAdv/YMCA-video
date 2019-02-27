@@ -1,0 +1,151 @@
+.trainer-wrap{
+	position:relative;
+	background:#252525;
+	@include clearfix;
+	padding-top:20px;
+	@include breakpoint($medium) {
+		padding:100px 0 50px 0;
+	}
+}
+
+// .trainer-img{
+// 	width:100%;
+// 	display:block;
+// 	height:auto;
+// }
+
+.trainer-information{
+	@include breakpoint($medium) {
+		display:flex;
+		align-items:center;
+	}
+}
+
+.trainer-image-left{
+	@include breakpoint($medium) {
+		width:50%;
+		float:left;
+	}
+
+	img{
+		width:100%;
+		height:auto;
+		display:block;
+		@include breakpoint($medium) {
+			//display:none;
+		}
+		@include breakpoint($mega) {
+			display:block;
+		}
+	}
+}
+
+.trainer-content-page{
+	color:white;
+	padding:20px 0px;
+	@include breakpoint($medium) {
+		float:left;
+		padding:100px 0px 100px 100px;
+		width:50%;
+	}
+	h2, h3, h4, h5, h6, p, li{
+		color:white;
+	}
+	h2{
+		font-size:35px;
+		font-family:$headings-book;
+		text-transform:uppercase;
+		margin-bottom:0px;
+		padding-bottom:0px;
+		@include breakpoint($medium) {	
+			font-size:60px;
+		}
+	}
+	h3{
+
+		font-family:$headings-1;
+		font-size:20px;
+		text-transform:uppercase;
+		@include breakpoint($medium) {	
+			font-size:40px;
+		}
+
+	}
+}
+
+.popup-vimeo{
+	text-decoration: none;
+}
+
+.video-content{
+	@include clearfix;
+	background:#363636;
+	bottom:50px;
+	width:100%;
+
+	@include breakpoint($medium) {
+		position:absolute;
+		background:transparent;
+	}
+	.video-content-wrap{
+		padding:20px;
+		@include breakpoint($medium) {
+			display:flex;
+			flex-wrap:nowrap;
+			max-width:1200px;
+			margin:0 auto;
+		}
+	}
+	h3{
+		min-width:15%;
+		margin-top:15px;
+	}
+	p{
+		color:white;
+	}
+}
+
+.trainer-info-wrap{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:stretch;
+	min-height:800px;
+	@include breakpoint($medium) {
+		flex-wrap:nowrap;
+	}
+
+	.trainer-image{
+		min-height:400px;
+
+
+	}
+	.trainer-image, .trainer-content-wrap{
+		width:100%;
+		@include breakpoint($medium) {
+			width:50%;
+		}
+	}
+	.trainer-content-padding{
+		padding:20px;
+		@include breakpoint($medium) {
+			padding:50px;
+		}
+	}
+}
+
+
+
+//trainers on taxonomy pages
+.trainer-content-wrap{
+	display:flex;
+	align-items: center;
+	h3{
+		font-size:40px;
+		color:#252525;
+		margin-bottom:0px;
+		padding-bottom:0px;
+		@include breakpoint($medium) {
+			font-size:60px;
+		}
+	}
+}

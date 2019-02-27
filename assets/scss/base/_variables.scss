@@ -1,0 +1,64 @@
+//
+//
+// 		MASTER VARIABLES!!!!1
+//
+//___________________________________________________
+
+
+//
+// Typography
+//___________________________________________________
+
+
+
+
+//
+// Colors
+//___________________________________________________
+
+$base-font-color: #000;
+
+$primary-color: #000;
+$secondary-color: #D9D9D9;
+$tertiary-color: #75B1C5;
+$quaternary-color: #666;
+
+$primary-color-opaque: rgba(255,255,255,0.8);
+
+$red-dark: #B20000;
+
+
+//
+// Layout
+//___________________________________________________
+
+$padding: 1em;
+$padding-medium: 2em;
+$padding-large: 3.5em;
+$padding-xl: 4.5em;
+
+$vertical-padding: 2em 0;
+$vertical-padding-medium: 4em 0;
+$vertical-padding-large: 6em 0;
+
+$horizontal-padding: 0 2em;
+$horizontal-padding-medium: 0 4em;
+$horizontal-padding-large: 0 6em;
+
+
+
+//
+// Design/Animation
+//___________________________________________________
+
+
+// default border radius
+$border-radius: 10px;
+
+
+// transitions
+$transition: all, 1s;
+$transition-fast: all, 0.5s;
+$transition-faster: all, 0.25s;
+$transition-slow: all, 2s;
+$transition-slower: all, 5s;

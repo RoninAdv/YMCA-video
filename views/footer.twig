@@ -1,0 +1,59 @@
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<div class="wrap">
+				<div class="copyright">
+					<p>&copy; 2009 – </p>
+				</div><!-- copyright -->
+				<div class="social-media-links">
+					{% if options.facebook %}
+						<a href="{{options.facebook}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-facebook-f fa-inverse" data-fa-transform="shrink-3.5"></i>
+							</span>
+						</a>
+					{% endif %}	
+					{% if options.twitter %}
+						<a href="{{options.twitter}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-twitter fa-inverse" data-fa-transform="shrink-3.5"></i>
+							</span>
+						</a>
+					{% endif %}	
+					{% if options.instagram %}
+						<a href="{{options.instagram}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-instagram fa-inverse" data-fa-transform="shrink-3.5 "></i>
+							</span>
+						</a>
+					{% endif %}	
+					{% if options.google %}
+						<a href="{{options.google}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-google-plus-g fa-inverse" data-fa-transform="shrink-6 "></i>
+							</span>
+						</a>
+					{% endif %}
+					{% if options.linkedin %}
+						<a href="{{options.linkedin}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-linkedin-in fa-inverse" data-fa-transform="shrink-3.5 "></i>
+							</span>
+						</a>
+					{% endif %}
+					{% if options.pinterest %}
+						<a href="{{options.pinterest}}" target="_blank">
+							<span class="fa-layers fa-2x">
+								 <i class="fa fa-circle"></i>
+								<i class="fab fa-pinterest-p fa-inverse" data-fa-transform="shrink-3.5"></i>
+							</span>
+						</a>
+					{% endif %}
+				</div><!-- social-media-links -->
+			</div><!-- wrap -->
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->

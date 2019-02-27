@@ -1,0 +1,28 @@
+{
+  "name": "roninpress",
+  "version": "1",
+  "main": "assets/scss/style.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "Rakefile",
+    "*.gemspec",
+    "lib",
+    "Gemfile",
+    "bower_components"
+  ],
+  "dependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "susy": "~2.2.1"
+  },
+  "authors": [
+    "JD"
+  ],
+  "license": "MIT",
+  "homepage": "http://roninadv.com",
+  "private": true,
+  "devDependencies": {
+    "sassy-maps": "~0.4.0"
+  }
+}

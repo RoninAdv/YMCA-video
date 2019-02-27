@@ -1,0 +1,43 @@
+.page-template-landing-pages{
+	.site-header{ display:none; }
+	.hero-content{
+		bottom:0px;
+		@include breakpoint($xl) {
+			bottom:50px;
+		}
+	}
+	.hero-content-wrap{
+		text-align:center;
+		h2, h5, h6{
+			text-transform:uppercase;
+		}
+		h2{
+			font-size:50px;
+			line-height:80%;
+			padding-bottom:15px;
+			@include breakpoint($medium) {
+				font-size:150px;
+			}
+			@include breakpoint($xl) {
+				font-size:200px;
+			}
+		}
+		h2, h5{
+			font-family:$headings-book;
+		}
+		h5{
+			margin-bottom:15px;
+			color:#00aeef;
+		}
+		h5, h6{
+			font-size:20px;
+			@include breakpoint($medium) {
+				font-size:25px;
+			}
+			@include breakpoint($xl) {
+				font-size:30px;
+			}
+		}
+	}
+		
+}

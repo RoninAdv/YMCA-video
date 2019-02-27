@@ -1,0 +1,33 @@
+.trainers{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  @include breakpoint($medium) {
+    flex-wrap:nowrap;
+     align-items:stretch;
+  }
+  .trainer{
+    width:100%;
+    @include breakpoint($medium) {
+      width:25%;
+    }
+    position:relative;
+	  
+	
+	  
+  } 
+  .trainer-content{
+    text-align:center;
+    padding:100% 0px 50px;
+    @include breakpoint($medium) {
+      padding:100% 20px 50px;
+    }
+	  
+	  img{
+		  margin:0 auto;
+	  }
+	  .white-btn{
+		  text-transform:capitalize;
+	  }
+  }
+}

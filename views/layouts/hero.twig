@@ -1,0 +1,33 @@
+ 
+<div class="hero-wrapper">
+
+	{% if layouts.hero_link %}
+		<a href="{{ layouts.hero_link }}">
+	{% endif %}
+	<img src="{{ TimberImage(layouts.hero_image).src }}"  {% if layouts.mobile_image %} class="for-large" {% endif %} alt="{{ TimberImage(layouts.mobile_image).alt }}"/>
+
+	{% if layouts.hero_link %}
+		</a>
+	{% endif %}
+	
+
+	 {% if layouts.mobile_image %}
+	
+		<img src="{{ TimberImage(layouts.mobile_image).src }}" class="for-mobile" alt="{{ TimberImage(layouts.mobile_image).alt }}"/>
+
+	{% endif %}
+
+
+	{% if layouts.hero_content %}
+		<div class="hero-content">
+			<div class="hero-content-wrap">
+				{{ layouts.hero_content }}
+			</div>
+		</div>
+	{% endif %}
+	
+
+</div>
+
+
+

@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'cachetbookregular';
+    src: url('../fonts/cachetbook-webfont.woff2') format('woff2'),
+         url('../fonts/cachetbook-webfont.woff') format('woff'),
+         url('../fonts/cachetbook-webfont.ttf') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+$transition: all, 1s;
+
+#loginform, #lostpasswordform{
+	background:transparent;
+	position:relative !important;
+	overflow:visible;
+	margin-top:0px !important;
+}
+
+#nav{
+	text-align:center;
+}
+
+#backtoblog{
+	display:none !important;
+}
+
+#login{
+	width:400px !important;
+}
+
+
+
+.login{
+	background:url(../img/global/login-bg.jpg) center center;
+	background-size:cover;
+	color:white !important;
+	position:relative;
+	font-family: 'cachetbookregular';
+	text-transform:uppercase;
+	.button.button{
+		background:white;
+		border-color:white;
+		text-shadow: none;
+		color:black;
+		transition:$transition;
+		border:0;
+		box-shadow:none;
+		border-radius:0;
+		font-size:16px;
+		display:block;
+		padding:10px 50px;
+		height:auto;
+		float:none;
+		margin:0 auto;
+		border:solid transparent 1px;
+		&:hover, &:active, &:visited{
+			background:#989896;
+			transform:scale(1.1);
+		}
+	}
+}
+
+.submit{
+	text-align:center;
+}
+
+
+.forgetmenot.forgetmenot{
+	float:none !important;
+	position:absolute;
+	top:90%;
+	width:84%;
+	text-align:center;
+}
+
+.message, #login_error{
+	background-color:transparent!important;
+	text-align:center;
+	border:none !important;
+}
+
+#login_error{
+	border-color:#dc3232 !important;
+	a{
+		color:#989896;
+	}
+}
+
+.input.input{
+ background-color:transparent;
+ background:transparent;
+}
+
+.login h1 a{
+	margin-bottom:0px !important;
+}
+
+.login form, .message{
+	box-shadow:none !important;
+}
+
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0px !important;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(112,112,112, 0.33) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text]{
+	background:rgba(112,112,112, 0.33)  !important;
+	border:0px !important;
+	color:white;
+	font-size:16px;
+	font-family: 'cachetbookregular';
+	padding:20px 20px;
+	border-radius:15px;
+}
+
+#loginform#loginform{
+	color:white !important;
+	#user_login{
+		background:rgba(112,112,112, 0.33) !important;
+		&:-webkit-autofill{
+			background-color:rgba(112,112,112, 0.33) !important;
+		}
+	}
+	label{
+		color:white;
+	}
+	input[type=checkbox]:checked:before{
+		color:black !important;
+		border:black !important;
+	}
+	input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+		background: rgba(112,112,112, 0.33) !important;
+	}
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text]{
+	
+}
+
+#nav a, #backtoblog a{
+	color:white !important;
+	transition:$transition;
+	&:hover{
+		
+	}
+}
+
+#rememberme{
+	background:white !important;
+}
+

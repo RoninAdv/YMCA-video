@@ -1,0 +1,40 @@
+.page-id-117, .tax-class_types{
+	.hero-content{
+		bottom:5%;
+		@include breakpoint($medium) {
+			bottom:30%;
+		}
+	}
+	.hero-content-wrap{
+		max-width:100% !important;
+	}
+
+	.hero-content-wrap{
+		text-align:center;
+		h2{
+			font-size:40px;
+			font-family:$headings-book;
+			line-height:85%;
+			margin-bottom:30px;
+			padding-bottom:0px;
+			@include breakpoint($medium) {
+				font-size:125px;
+			}
+		}
+		p{
+			max-width:960px;
+			margin:0 auto;
+		}
+	} 
+}
+
+.page-id-117{
+	.hero-content{
+		position:absolute;
+		bottom:5%;
+		background:transparent;
+		@include breakpoint($medium) {
+			bottom:30%;
+		}
+	}
+}

@@ -1,0 +1,138 @@
+//
+//	Header
+//-------------------------------------------------------
+.site-header {
+	@include clearfix;
+	position:fixed;
+	z-index:10;
+	width:100%;
+	z-index:999;
+	min-height:50px;
+	padding:20px;
+	display:none;
+	transition: $transition;
+	@include breakpoint($medium) {
+		display:block;
+	}
+} //.site-header
+
+.scrolled{
+	
+	background:rgba(0,0,0, 0.7);
+	.site-branding{
+		width:50px;
+	}
+	#site-navigation{
+		margin-top:10px;
+	}
+}
+
+
+.site-branding{
+	transition: $transition;
+	float:left;
+	width:111px;
+	img{
+		display:inline-block;
+		float:left;
+		transition: $transition;
+	}
+	span{
+		display:inline-block;
+		color:white;
+		font-size:30px;
+		margin-left:10px;
+	}
+}
+
+#site-navigation{
+	float:right;
+	margin-top:20px;
+	display:flex;
+}
+
+.background{
+	background: #D8D8D8;
+	border: 1px solid #979797;
+}
+
+
+#primary-menu, .login-links, .login-logout-mobile{
+	@include clearfix;
+	margin-right:20px;
+	ul{
+		@include clearfix;
+	}
+	li{
+		float:left;
+		margin-left:20px;
+	}
+	li.nav-outline{
+		a{
+			border:1px solid #FFF;
+			&:hover{
+				background:#FFF;
+				color:#595959;
+			}
+		}
+	}
+	a{
+		text-decoration:none;
+		color:white;
+		text-transform:uppercase;
+		font-size:18px;
+		font-family:$headings-1;
+		padding:5px 10px;
+		&:hover{
+			color:#595959;
+			transition:$transition;
+		}
+	}
+	.menu-item-has-children{
+		position:relative;
+	}
+	.sub-menu{
+		visibility: hidden;
+		opacity:0;
+		background:rgba(0,0,0, 0.8);
+		padding:20px;
+		position:absolute;
+		transition: $transition;
+		top:100%;
+		left:-20px;
+		width:300px;
+		margin-top:20px;
+		li{
+			margin:0px 0px 8px 0px;
+			width:100%;
+		}
+	}
+	.menu-item-has-children:hover{
+		.sub-menu{
+			visibility: visible;
+			opacity:1;
+		}
+	}
+}
+.menu-logged-in-container, .menu-logged-out-container{
+	float:left;
+}
+
+
+
+
+
+.login-links{
+	margin-left:40px;
+	float:left;
+	font-family:$headings-1;
+	font-size:18px;
+	text-transform:uppercase;
+	color:white;
+	font-weight:bold;
+	font-size:18px;
+	a{
+		font-weight:bold;
+	}
+
+}

@@ -1,0 +1,15 @@
+//
+//	Breakpoint
+//	http://breakpoint-sass.com
+//-------------------------------------------------------
+
+$breakpoint-to-ems: false;
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-default-media: screen;
+
+$xsmall:	320px;
+$small:		480px;
+$medium:	900px, 'no-query' '.lt-ie9';
+$large:		1024px, 'no-query' '.lt-ie9';
+$xl:		1200px;
+$mega:		1700px;

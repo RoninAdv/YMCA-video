@@ -1,0 +1,32 @@
+// Box-sizing
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+
+// Hide text meant only for screen readers
+.vh,
+.screen-reader-text {
+	@include visuallyhidden;
+}
+
+
+// Style for message that displays for visitors using IE7 and below
+.browsehappy {
+	padding: 1.25em 0;
+	text-align: center;
+	color: #fff;
+	background: #96292E;
+	@include font-size(16);
+	line-height: 130%;
+	font-family: Helvetica, Arial, Sans-serif;
+	a {
+		color: #fff;
+	}
+}
+
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}

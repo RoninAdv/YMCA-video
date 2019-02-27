@@ -1,0 +1,13 @@
+<div class="icon-wrap">
+    <div id="icon-section">
+      {% for blocks in layouts.block %}
+        <div class="icon-block">    
+          <img src="{{ TimberImage(blocks.icon).src }}">
+          <h3>{{ blocks.heading}}</h3>
+          <p>{{ blocks.text }}</p>
+       </div>    
+      {% endfor %}
+    </div> <!-- accordion End -->
+</div><!-- accordion-wrap -->
+
+

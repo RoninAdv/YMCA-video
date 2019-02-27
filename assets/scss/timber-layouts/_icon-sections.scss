@@ -1,0 +1,28 @@
+.icon-section{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  padding:100px 20px;
+  @include breakpoint($medium) {
+    flex-wrap:nowrap;
+  }
+  .icon-block{
+    width:100%;
+    @include breakpoint($medium) {
+      width:25%;
+    }
+    text-align:center;
+  }
+  .inner-content{
+    max-width:230px;
+    margin:0 auto;
+  }
+  img{
+    display:block;
+    margin:0 auto 20px;
+  }
+  h3{
+    color:black;
+  }
+}

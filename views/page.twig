@@ -1,0 +1,39 @@
+
+<!-- flexible content layout calls -->
+{% for layouts in post.get_field('page_layouts') %}
+
+    {% if layouts.acf_fc_layout == 'content_block' %}
+       
+		{% include '/layouts/content-block.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'parallax_image' %}
+
+      {% include '/layouts/parallax.twig' %}
+
+  	{% elseif layouts.acf_fc_layout == 'rotator' %}
+
+      {% include '/layouts/rotator.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'accordion_content' %}
+
+      {% include '/layouts/accordion.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'hero_image' %}
+
+    	{% include '/layouts/hero.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'trainers' %}
+
+      {% include '/layouts/trainers.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'sections_with_icons' %}
+
+      {% include '/layouts/icon-sections.twig' %}
+
+    {% elseif layouts.acf_fc_layout == 'member_overview' %}
+
+      {% include '/layouts/member-overview.twig' %}
+
+    {% endif %}
+
+{% endfor %}
