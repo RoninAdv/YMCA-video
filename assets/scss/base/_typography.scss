@@ -67,6 +67,9 @@ h2{
 	padding-bottom:29px;
 	color:#555555;
 	@include breakpoint($medium) {
+		font-size:22px;
+	}
+	@include breakpoint($large) {
 		font-size:28px;
 	}
 }
