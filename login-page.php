@@ -15,7 +15,7 @@
 
 if ( is_user_logged_in() ) {
     //$login_url = SwpmSettings::get_instance()->get_value('login-page-url');
-    header('Location: http://10.1.10.238:8888/YMCA-video-site/member-overview/' );
+    header('Location: http://ultfitcomm.org/member-overview/' );
 } else {
 	
 }
