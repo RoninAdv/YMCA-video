@@ -207,13 +207,18 @@
   color:#4c4c4e;
   margin-top:-3px;
   transition:$transition;
+  font-size:30px;
+  top:-6px;
+  @include breakpoint($medium) {
+     top:0px;
+    font-size:20px;
+  }
   &:hover{
     color:$tertiary-color;
   }
 }
 
 .left {
-  top:0px;
   left:120px;
   &:after {
     content: "<";
@@ -222,7 +227,6 @@
 }
 
 .right {
-  top:0px;
   left:150px;
   &:after {
     content: ">";

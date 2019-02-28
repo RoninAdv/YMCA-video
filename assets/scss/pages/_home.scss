@@ -54,9 +54,12 @@
 	padding:20px;
 	width:100%;
 	@include breakpoint($medium) {
-		bottom:100px;
+		bottom:20px;
 		background:transparent;
 		position:absolute;
+	}
+	@include breakpoint($large) {
+		bottom:100px;
 	}
 }
 

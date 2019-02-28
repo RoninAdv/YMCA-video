@@ -29,6 +29,8 @@
 <div id="page" class="site">
 	<div id="canvas">
 		<div class="mobile-head">
+
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="mobile-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/global/y-logo-white.png"/></a>
 <!-- 			<div class="mobile-logo"><img src="<?php bloginfo('template_directory'); ?>/assets/img/global/logo.png"></div>
  -->			<a href="#" class="icon-menu toggle-nav"><i class="fas fa-bars"></i><span class="screen-reader-text">Menu</span></a>
 		</div>

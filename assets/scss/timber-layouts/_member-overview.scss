@@ -1,12 +1,8 @@
 .page-id-117, .tax-class_types{
 	.hero-content{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		
+		bottom:5%;
 		@include breakpoint($medium) {
-			bottom:30%; 
+			bottom:30%;
 		}
 	}
 	.hero-content-wrap{
@@ -35,11 +31,11 @@
 .page-id-117{
 	.hero-content{
 		position:absolute;
-		background:transparent;
 		top: 50%;
 		left: 50%;
-		bottom:initial;
 		transform: translate(-50%, -50%);
+		bottom:initial;
+		background:transparent;
 		@include breakpoint($medium) {
 			bottom:30%;
 		}
