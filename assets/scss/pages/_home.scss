@@ -23,9 +23,9 @@
 .download-btns{
 	@include breakpoint($medium) {
 		position:absolute;
-		top:28%;
-		right:40px;
-		width:40%;
+		top:35%;
+		right:13%;
+		width:32%;
 	}
 	display:flex;
 	justify-content:space-between;
