@@ -22,6 +22,7 @@ get_header(); ?>
 			$image = get_field('hero_image', $term);
 			$content = get_field('hero_content', $term);
 
+			$videoLink = get_field('video_link', $term);
 			$videoImage = get_field('video_image', $term);
 			$videoHeadline = get_field('video_headline', $term);
 			$videoContent = get_field('video_content', $term);
@@ -37,7 +38,7 @@ get_header(); ?>
 		</div><!-- hero-content -->
 	</div><!-- hero-wrapper -->
 	<div class="hero-wrapper">
-		<a class="popup-vimeo" href="https://vimeo.com/45830194">
+		<a class="popup-vimeo" href="<?php echo $videoLink; ?>">
 			<img src="<?php echo $videoImage; ?>"  alt=""/>
 			<div class="video-content">
 				<div class="video-content-wrap">
