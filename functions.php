@@ -1,5 +1,5 @@
 <?php
-///WORKING GIT TESTING sublime test
+///WORKING GIT TESTING sublime
 /**
  * ronin functions and definitions.
  *
@@ -95,7 +95,42 @@ function ronin_setup() {
 	       	'methods'  => 'GET',
 	        'callback' => 'email_addresses'
 	    ) );
+		register_rest_route( 'new', 'user', array(
+	       	'methods'  => 'GET',
+	        'callback' => 'new_user'
+	    ) );
 	});
+	
+	function new_user(){
+		$name = $_GET['name'];
+		$email = $_GET['email'];
+		$password = $_GET['password'];
+		$home_branch = $_GET['home_branch'];
+		
+		
+		
+		
+		$user_id = wp_create_user( $email, $password, $email );
+		
+		update_field('home_branch', $home_branch, $user_id);
+		
+		$userdata = array(
+			'ID'                    => $user_id,    //(int) User ID. If supplied, the user will be updated.
+			'user_login'            => $email,   //(string) The user's login username.
+			'first_name'            => $name,   //(string) The user's first name. For new users, will be used to build the first part of the user's display name if $display_name is not specified.
+			'last_name'             => $name,   //(string) The user's last name. For new users, will be used to build the second part of the user's display name if $display_name is not specified.
+			'user_email'             => $email,   //(string) The user's last name. For new users, will be used to build the second part of the user's display name if $display_name is not specified.
+
+		);
+		
+		$user_id = wp_insert_user( $userdata ) ;
+		
+		
+		
+		return new WP_REST_Response( $user_id ) ;
+		
+		
+	}
 	
 	function email_addresses(){
 		$variable = get_field('email_list', 'option');
@@ -108,32 +143,41 @@ function ronin_setup() {
 
 	function calendar_link(){
 		
-		$posts = get_posts(array(
-			'numberposts'	=> -1,
-			'post_type'		=> 'classes',
-			'meta_query'	=> array(
-// 				'relation'		=> 'AND',
-// 				array(
-// 					'key'	 	=> 'start_date',
-// 					'value'	  	=> date('Ymd',strtotime("today")),
-// 					'compare'       => '>=',
-// 		            'type'          => 'DATE',
-// 				),
-				array(
-					'key'	  	=> 'trainer_associated',
-					'value'	  	=> $_GET['ID'],
-					'compare' 	=> 'LIKE',
+		if( $_GET['ID'] ) { 
+			$posts = get_posts(array(
+				'numberposts'	=> -1,
+				'post_type'		=> 'classes',
+				'meta_query'	=> array(
+					array(
+						'key'	  	=> 'trainer_associated',
+						'value'	  	=> $_GET['ID'],
+						'compare' 	=> 'LIKE',
+					),
 				),
-			),
-		));
+			));
+		} else {
+			$posts = get_posts(array(
+				'numberposts'	=> -1,
+				'post_type'		=> 'classes',
+				'meta_query'	=> array(
+					array(
+						'key'	  	=> 'trainer_associated',
+						'value'	  	=> array( 97, 138, 139, 140 ),
+						'compare' 	=> 'IN',
+					),
+				),
+			));
+		}
+		
 		
 		$filtered = array();
+		$location = wp_get_post_terms( $posts[$x]->ID, 'locations');
 		
 		for ($x = 0; $x < count($posts); $x++) {
-			array_push( $filtered, array("ID" => $posts[$x]->ID, "title" => $posts[$x]->post_title, "name" => $posts[$x]->post_name, "dates" => get_field('dates', $posts[$x]->ID)));
+			array_push( $filtered, array("ID" => $posts[$x]->ID, "title" => $posts[$x]->post_title, "name" => $posts[$x]->post_name, "dates" => get_field('dates', $posts[$x]->ID), "class_info" => get_field('class_info', $posts[$x]->ID), "trainer" => get_field('trainer_associated', $posts[$x]->ID), "times" => get_field('times', $posts[$x]->ID), "trainer_image_small" => get_field('trainer_image_small', get_field('trainer_associated', $posts[$x]->ID)),"locations" => wp_get_post_terms( $posts[$x]->ID, 'locations')));
 		} 
 		
-		//print_r($filtered);		
+		//print_r($posts);		
 
 		return new WP_REST_Response( $filtered);
 	}
@@ -612,13 +656,30 @@ require get_template_directory() . '/inc/jetpack.php';
 
 //TJ ADDED THIS FOR DEV
 //
+//
+//
+
+add_action( 'gform_after_submission_1', 'autoLogin', 10, 2 );
+function autoLogin( $entry, $form ) {
+    $creds = array(
+        'user_login'    => rgar( $entry, '3' ),
+        'user_password' => rgar( $entry, '4' ),
+        'remember'      => true
+    );
+ 
+    $user = wp_signon( $creds, false );
+ 
+    if ( is_wp_error( $user ) ) {
+        echo $user->get_error_message();
+    }
+}
 
 add_action('init', 'handle_preflight');
 
 function handle_preflight() {
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, cache-control, Postman-Token");
+    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, cache-control, Postman-Token, Authorization, Content-Length, X-Requested-With");
 
     if('OPTIONS' == $_SERVER['REQUEST_METHOD']) {
         status_header(200);
