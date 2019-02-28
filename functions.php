@@ -576,7 +576,7 @@ function possibly_redirect(){
       ( isset($_GET['action']) && $_GET['action']=='logout') ||   // in case of LOGOUT
       ( isset($_GET['checkemail']) && $_GET['checkemail']=='confirm') ||   // in case of LOST PASSWORD
       ( isset($_GET['checkemail']) && $_GET['checkemail']=='registered') ) return;    // in case of REGISTER
-    else wp_redirect(home_url('/login')); wp_redirect('http://10.1.10.238:8888/YMCA-video-site/login'); // or wp_redirect(home_url('/login'));
+    else wp_redirect(home_url('/login')); wp_redirect('http://ultfitcomm.org/login'); // or wp_redirect(home_url('/login'));
     exit();
   }
 }
@@ -703,7 +703,7 @@ function update( $params ){
 
 	curl_setopt_array($curl, array(
 	  CURLOPT_PORT => "8888",
-	  CURLOPT_URL => "http://10.1.10.238:8888/YMCA-video-site/api/user/validate_auth_cookie/?insecure=cool&cookie=".$cookie,
+	  CURLOPT_URL => "http://ultfitcomm.org/api/user/validate_auth_cookie/?insecure=cool&cookie=".$cookie,
 	  CURLOPT_RETURNTRANSFER => true,
 	  CURLOPT_ENCODING => "",
 	  CURLOPT_MAXREDIRS => 10,
