@@ -23,7 +23,9 @@
 	}
 	.gform_login_widget{
 		max-width:400px !important;
-		width:400px !important;
+		@include breakpoint($medium) {
+			width:400px !important;
+		}
 	}
 	.login-wrap{
 		position:relative;
@@ -152,6 +154,7 @@
 			background:transparent !important;
 		}
 		select{
+			-webkit-appearance:none;
 			height:60px;
 		}
 		

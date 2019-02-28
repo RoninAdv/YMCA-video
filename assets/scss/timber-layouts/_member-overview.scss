@@ -4,6 +4,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		
 		@include breakpoint($medium) {
 			bottom:30%; 
 		}
@@ -34,10 +35,10 @@
 .page-id-117{
 	.hero-content{
 		position:absolute;
-		bottom:5%;
 		background:transparent;
 		top: 50%;
 		left: 50%;
+		bottom:initial;
 		transform: translate(-50%, -50%);
 		@include breakpoint($medium) {
 			bottom:30%;
