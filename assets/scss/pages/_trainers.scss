@@ -45,8 +45,11 @@
 	padding:20px 0px;
 	@include breakpoint($medium) {
 		float:left;
-		padding:100px 0px 100px 100px;
+		padding:100px 20px 20px 20px;
 		width:50%;
+	}
+	@include breakpoint(large) {
+		padding:100px 0px 100px 100px;
 	}
 	h2, h3, h4, h5, h6, p, li{
 		color:white;
